@@ -1,0 +1,27 @@
+contract Lot {
+    
+   
+    mapping(address => bool) authorizedManufacturers;
+    mapping(address => bool) authorizedDistributors;
+    mapping(address => bool) authorizedPharmacies;
+    mapping(address => bool) authorizedPharmacies;
+    mapping(address => bool) authorizedPharmacies;  
+    mapping(address => bool) authorizedPharmacies;
+
+
+
+    address payable internal ownerID; //The eth address of the contract deployer
+    mapping(address => uint) public boxesPatient; //Mapping the purchased boxes to their corresonding patient ID
+    string internal IPFShash;
+
+    
+    //Creating a struct for the uploaded image to the IPFS
+    struct lotdata{
+        string lotName; // A variable that specifies the lot Name
+        uint numBoxes; //A variable for the number of boxes in a lot
+        uint lotPrice; //The price of selling the whole lot
+        uint boxPrice; //The price of selling one box of the lot to a patient
+    }
+    
+    lotdata internal lot;
+    
